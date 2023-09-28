@@ -1,4 +1,4 @@
-//OGRENCÝ BÝLGÝ SÝSTEMÝ PROJESÝ
+//OGRENCÄ° BÄ°LGÄ° SÄ°STEMÄ° PROJESÄ°
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -14,7 +14,7 @@ struct ogrenci{
 	char ad[20];
 	char soyad[20];
 	char no[5];
-	int staj; // staj degeri 1'e eþitse baþarýlý, 0'a eþitse baþarýsýz
+	int staj; // staj degeri 1'e eÅŸitse baÅŸarÄ±lÄ±, 0'a eÅŸitse baÅŸarÄ±sÄ±z
 	char sifre[5];
 	char bolum[12];
 	int bolumkod;
@@ -22,7 +22,7 @@ struct ogrenci{
 	float vize;
 	float final;
 	int topakts;
-	int mezun; //mezun degeri 1'e eþitse mezun olmus 2 ise aktif ogrenci 0'a eþitse öðrencilikten atilmis
+	int mezun; //mezun degeri 1'e eÅŸitse mezun olmus 2 ise aktif ogrenci 0'a eÅŸitse Ã¶ÄŸrencilikten atilmis
 	char dogumtarihi[20];
 	char dogumyeri[20];
 	char cinsiyet[6];
@@ -76,7 +76,7 @@ void ogrMezuniyet();
 int main(){
 	int i,choice;
 
-	yoneticiPaneli(); //Sisteme giris icin yonetici dogrulamasý yapar
+	yoneticiPaneli(); //Sisteme giris icin yonetici dogrulamasÄ± yapar
 
 	do{ 
 	printf("1)Memur Girisi\n2)Not Girisi\n3)Alttan Kalanlar Not Girisi\n4)Staj Durumu\n5)Ogrenci Girisi (Not Durumu)\n6)Ogrenci Mezun Sorgulama\n7)Cikis\n");
@@ -108,7 +108,7 @@ void yoneticiPaneli(){
 	printf("Ogrenci Bilgi Sistemine Hosgeldiniz...\n\n");
 	printf("Sisteme erisim icin yonetici girisi gerekmektedir...\nDevam etmek icin bir tusa basiniz.\n");
 	getch(); 
-	system("CLS");//Ekrandaki yazýlarý temizler
+	system("CLS");//Ekrandaki yazÄ±larÄ± temizler
 	fflush(stdin);
 	printf("Yonetici Giris Ekrani\n");
 	printf("Kullanici adi  :");
@@ -282,7 +282,7 @@ void OgrenciKayidi(){
 		gets(ogr[sayac].soyad);
 		fflush(stdin);
 		printf("Ogrenci eklemek istediginiz bolumun kodunu giriniz:\nYazilim Muhendisligi(1000)/Bilgisayar Muhendisligi(2000)/Bilisim Sistemleri Muhendisligi(3000)\n");
-		printf("Bolum kodu      :"); //Bolumler tanýtýlýr ona gore bir secim yapilmasi istenir
+		printf("Bolum kodu      :"); //Bolumler tanÄ±tÄ±lÄ±r ona gore bir secim yapilmasi istenir
 		scanf("%d",&ogr[sayac].bolumkod);
 		fflush(stdin);
 		printf("Dogum Yeri      :");
@@ -329,7 +329,7 @@ void dersEkle(){
 		printf("Ders Kodu     :");
 		gets(dersler[i].kod);
 		fflush(stdin);
-		printf("Ders icin ogretim uyesi seciniz:\n"); //Sisteme kayitli ogretim uyeleri kullaniciya gösterilir.
+		printf("Ders icin ogretim uyesi seciniz:\n"); //Sisteme kayitli ogretim uyeleri kullaniciya gÃ¶sterilir.
   		for(j=0;j<4;j++){
   			printf("%d)%s %s\n",j+1,ogrUye[j].ad,ogrUye[j].soyad);
 		}
@@ -408,7 +408,7 @@ void notgirisi(){
 
 void notgirisi2(){
 	FILE *fPtr_alttan=fopen("fPtr_alttan","r");
-	printf("5 ve 6. yarýyýl icin not girisi.");
+	printf("5 ve 6. yarÄ±yÄ±l icin not girisi.");
 	char ogrencino[5];
 	int i,temp,secim;
 	float vize,final,ort;
@@ -417,7 +417,7 @@ void notgirisi2(){
 	char OgrUyeKontrol[20];
 	char ad[20],ders[50];
 
-	printf("Altan dersi olan öðrenci listesi:\n");
+	printf("Altan dersi olan Ã¶ÄŸrenci listesi:\n");
 	while(fscanf(fPtr_alttan,"%s\n%s %f %f %f\n",ad,ders,&vize,&final,&ort)!=EOF){ //alttan ders dosyasini okunur
 		for(i=0;i<100;i++){
 			if(strcmp(ad,ogr[i].ad)==0){
@@ -445,7 +445,7 @@ void notgirisi2(){
 			printf("%s ",ders); //esit olursa ogrencinin dersleri ekrana yazdirilir
 			}
 		}
-		printf("!Dersin Ogretim Uyesinin Kimlik Dogrulamasi yapmasý gerekmektedir...\n");
+		printf("!Dersin Ogretim Uyesinin Kimlik Dogrulamasi yapmasÄ± gerekmektedir...\n");
 		printf("Kullanici adi       :\n");
 		gets(OgrUyeKullanici);
 		fflush(stdin);
@@ -466,12 +466,12 @@ void notgirisi2(){
 			ort=vize*0.4+final*0.6; //ogrenci ortalamasi hesaplanir.
 			printf("Ders Ortalamasi         :%f",ort);
 			if(ort>=50){
-				ogr[temp].altDersSayisi2=-1; //5. ve 6. yariyilda tamamlanan alttan derslerin sayisi azaltýlýr.
+				ogr[temp].altDersSayisi2=-1; //5. ve 6. yariyilda tamamlanan alttan derslerin sayisi azaltÄ±lÄ±r.
 			}
 		}
 	}
 	
-	printf("Yeni bir ogrencinin not girisi icin 0'dan farklý bir sayi giriniz.\n");
+	printf("Yeni bir ogrencinin not girisi icin 0'dan farklÄ± bir sayi giriniz.\n");
 	}while(secim!=0);
 
 	fclose(fPtr_alttan);
@@ -491,12 +491,12 @@ void stajdurumu(){
 	int bkod;
 	
 	fflush(stdin);
-	printf("Memur Paneline Hosgeldiniz.\nSisteme erisim icin sifre kullanici adi dogrulamasi gerekiyor.\nKullanici adi:"); //Memur girisi ile Danýsman Ogretim Uyesi secilir
+	printf("Memur Paneline Hosgeldiniz.\nSisteme erisim icin sifre kullanici adi dogrulamasi gerekiyor.\nKullanici adi:"); //Memur girisi ile DanÄ±sman Ogretim Uyesi secilir
 	gets(memurKullanici);
 	fflush(stdin);
 	
 	if(strcmp(memurKullanici,memur1.kullaniciadi)!=0){ //Memur girisinin dogrulamasi
-		printf("Sistemde böyle bir kullanici bulunmamaktadir. Yoneticinin kayit yapmasi gerekmektedir."); 
+		printf("Sistemde bÃ¶yle bir kullanici bulunmamaktadir. Yoneticinin kayit yapmasi gerekmektedir."); 
 	}
 	printf("\nSifre:");
 	gets(memurSifre);
@@ -509,7 +509,7 @@ void stajdurumu(){
 		printf("\nHosgeldiniz, %s\n\n",memurKullanici);
 		printf("Memur Paneli\n");
 		printf("****************\n");
-		printf("Staj danismani icin bir ogretim gorevlisi belirleyiniz.\n"); //Ogretim Gorevlileri sýralanir
+		printf("Staj danismani icin bir ogretim gorevlisi belirleyiniz.\n"); //Ogretim Gorevlileri sÄ±ralanir
 		for(i=0;i<4;i++){
 			printf("%d %s %s\n",i+1,ogrUye[i].ad,ogrUye[i].soyad);
 		}
@@ -577,11 +577,11 @@ void OgrenciPaneli(){
 		while(!feof(fPtr_notlar)){ 
 			fflush(stdout);
 			fscanf(fPtr_notlar,"%s %s %f %f %f\n",ad,ders,&vize,&final,&ort);//not bilgileri dosyadan okunuyor
-			if(strcmp(ogr[temp].ad,ad)==0){ //dosyadan okunan ogrenci ile girilen ogrenci ayný mý kontrol ediliyor
-				printf("%s %f %f %f\n",ders,vize,final,ort); //ogrencinin dosyadan okunan not bilgileri gösteriliyor
+			if(strcmp(ogr[temp].ad,ad)==0){ //dosyadan okunan ogrenci ile girilen ogrenci aynÄ± mÄ± kontrol ediliyor
+				printf("%s %f %f %f\n",ders,vize,final,ort); //ogrencinin dosyadan okunan not bilgileri gÃ¶steriliyor
 				if(ort>50){
 					printf("Basarili\n");
-					ogr[temp].topakts=+5; //basarili olunan ders sayisi kadar akts arttýrýlýyor (1 Ders= 5 AKTS)
+					ogr[temp].topakts=+5; //basarili olunan ders sayisi kadar akts arttÄ±rÄ±lÄ±yor (1 Ders= 5 AKTS)
 				}
 				else{
 					printf("Basarisiz\n");
@@ -600,7 +600,7 @@ void OgrenciPaneli(){
 	else{
 		printf("Kimlik dogrulama yanlis.");
 	}
-	printf("\nOgrenci Belgesi Ýstiyor musunuz?(1->EVET / 2->HAYIR)");
+	printf("\nOgrenci Belgesi Ä°stiyor musunuz?(1->EVET / 2->HAYIR)");
 	scanf("%d",&choice);
 	if(choice==1){
 		ogrencibelgesi(ogr[temp]);
@@ -649,10 +649,10 @@ void OgrenciMezunMu(struct ogrenci s){
 
 void ogrSil(struct ogrenci s){
 	char num[5],ad[20],soyad[20],no[5],sifre[5],yer[20],cins[6];
-	int bkod,durum=0;// durum 1 olduðunda kayit silinir 
+	int bkod,durum=0;// durum 1 olduÄŸunda kayit silinir 
 
 	FILE *fPtr_ogr=fopen("ogrenci.txt","r");
-	FILE *fPtr_yedek=fopen("yedek.txt","a");//gecici olarak ogrenci dosyasý gorevi gorecek
+	FILE *fPtr_yedek=fopen("yedek.txt","a");//gecici olarak ogrenci dosyasÄ± gorevi gorecek
 	if( fPtr_ogr == NULL){
 		puts("Dosya acilamadi");
 	}
@@ -661,9 +661,9 @@ void ogrSil(struct ogrenci s){
 	}
 	while(!feof(fPtr_ogr)){
 		fflush(stdout);
-		fscanf(fPtr_ogr,"%s %s %s %s %s %s %d\n",ad,soyad,no,sifre,yer,cins,bkod); // ogrenci dosyasý okunur
-    	if(s.no != no){ // Eðer ogrenci numarasi dosyada okunan numaraya eþit deðilse if döngüsüne girer
-   			fprintf(fPtr_yedek,"%s %s %s %s %s %s %d\n",ad,soyad,no,sifre,yer,cins,bkod); //bilgiler yedek dosyasýna yazilir ve girilen ogrenci silinmis olur
+		fscanf(fPtr_ogr,"%s %s %s %s %s %s %d\n",ad,soyad,no,sifre,yer,cins,bkod); // ogrenci dosyasÄ± okunur
+    	if(s.no != no){ // EÄŸer ogrenci numarasi dosyada okunan numaraya eÅŸit deÄŸilse if dÃ¶ngÃ¼sÃ¼ne girer
+   			fprintf(fPtr_yedek,"%s %s %s %s %s %s %d\n",ad,soyad,no,sifre,yer,cins,bkod); //bilgiler yedek dosyasÄ±na yazilir ve girilen ogrenci silinmis olur
     	}
     else durum=1; 
 	}
@@ -678,7 +678,7 @@ void ogrSil(struct ogrenci s){
 	} 
 	
 	else{ // girilen ogrenci dosyada yoksa
-		remove("yedek.txt"); // yedek dosyasý kullanýlmadýgý ýcýn silinmis
+		remove("yedek.txt"); // yedek dosyasÄ± kullanÄ±lmadÄ±gÄ± Ä±cÄ±n silinmis
 	}
 	
 	fflush(stdin);
